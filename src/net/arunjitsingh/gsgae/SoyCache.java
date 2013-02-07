@@ -17,6 +17,7 @@ import javax.annotation.Nullable;
 public class SoyCache {
   private static final String PREFIX = "/net/arunjitsingh/gsgae/templates/";
   private static final List<String> SOY_FILES = Lists.newArrayList(
+      "base.soy",
       "home.soy",
       "query.soy");
 

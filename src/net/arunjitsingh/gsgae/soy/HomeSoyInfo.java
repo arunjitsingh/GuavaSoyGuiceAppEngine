@@ -23,8 +23,6 @@ public class HomeSoyInfo extends SoyFileInfo {
   public static class TemplateName {
     private TemplateName() {}
 
-    /** The full template name of the .main template. */
-    public static final String MAIN = "gsgae.templates.home.main";
   }
 
 
@@ -34,61 +32,15 @@ public class HomeSoyInfo extends SoyFileInfo {
   public static class Param {
     private Param() {}
 
-    /** Listed by .main. */
-    public static final String PAGE = "page";
   }
-
-
-  /**
-   * The home page.
-   */
-  public static class MainSoyTemplateInfo extends SoyTemplateInfo {
-
-    /** This template's full name. */
-    public static final String __NAME__ = "gsgae.templates.home.main";
-    /** This template's partial name. */
-    public static final String __PARTIAL_NAME__ = ".main";
-
-    /** Data about the page. */
-    public static final String PAGE = "page";
-
-    // Indirect params.
-    /** Listed by gsgae.templates.query.resultHeader. */
-    public static final String QUERY = "query";
-
-    private MainSoyTemplateInfo() {
-      super(
-          "gsgae.templates.home.main",
-          ImmutableMap.<String, ParamRequisiteness>builder()
-              .put("page", ParamRequisiteness.REQUIRED)
-              .put("query", ParamRequisiteness.REQUIRED)
-              .build(),
-          ImmutableSortedSet.<String>of(),
-          false,
-          false);
-    }
-
-    private static final MainSoyTemplateInfo __INSTANCE__ =
-        new MainSoyTemplateInfo();
-
-    public static MainSoyTemplateInfo getInstance() {
-      return __INSTANCE__;
-    }
-  }
-
-  /** Same as MainSoyTemplateInfo.getInstance(). */
-  public static final MainSoyTemplateInfo MAIN =
-      MainSoyTemplateInfo.getInstance();
 
 
   private HomeSoyInfo() {
     super(
         "home.soy",
         "gsgae.templates.home",
-        ImmutableSortedSet.<String>of(
-            Param.PAGE),
-        ImmutableList.<SoyTemplateInfo>of(
-            MAIN),
+        ImmutableSortedSet.<String>of(),
+        ImmutableList.<SoyTemplateInfo>of(),
         ImmutableMap.<String, CssTagsPrefixPresence>of());
   }
 
