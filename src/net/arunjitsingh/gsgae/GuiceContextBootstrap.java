@@ -8,6 +8,6 @@ public class GuiceContextBootstrap extends GuiceServletContextListener {
 
   @Override
   protected Injector getInjector() {
-    return Guice.createInjector(new HomeServletModule());
+    return Guice.createInjector(new MainServletModule());
   }
 }

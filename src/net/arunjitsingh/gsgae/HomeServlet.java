@@ -1,15 +1,14 @@
 package net.arunjitsingh.gsgae;
 
-import net.arunjitsingh.gsgae.soy.BaseSoyInfo;
+import net.arunjitsingh.gsgae.soy.HomeSoyInfo;
 
 import com.google.common.base.Strings;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.google.common.collect.ImmutableSet;
 import com.google.common.net.MediaType;
 import com.google.inject.Singleton;
 import com.google.template.soy.data.SoyMapData;
 import com.google.template.soy.tofu.SoyTofu;
-import com.google.template.soy.tofu.SoyTofu.Renderer;
 
 import java.io.IOException;
 import java.util.Map;
@@ -31,13 +30,11 @@ public class HomeServlet extends HttpServlet {
 
     Map<String, Object> data = Maps.<String, Object> newHashMap();
     data.put("query", Strings.nullToEmpty(req.getParameter("q")));
+    data.put("results", Lists.newArrayList());
 
     SoyTofu tofu = SoyCache.getCache().getTofu();
-    Renderer renderer = tofu.newRenderer(BaseSoyInfo.MAIN);
-    renderer.setActiveDelegatePackageNames(ImmutableSet.of("HomePage"));
-    renderer.setData(new SoyMapData(data)).setIjData(ij);
+    String content = SoyRenderer.render(tofu, HomeSoyInfo.MAIN, new SoyMapData(data), ij);
 
-    String content = renderer.render();
     resp.setContentType(MediaType.HTML_UTF_8.toString());
     resp.getWriter().print(content);
   }

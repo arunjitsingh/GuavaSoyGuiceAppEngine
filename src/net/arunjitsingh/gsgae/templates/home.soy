@@ -1,11 +1,14 @@
-{delpackage HomePage}
 {namespace gsgae.templates.home}
 
 /**
  * The home page.
  */
-{deltemplate gsgae.templates.impl.content}
-  <section id="resultset">
-    {call gsgae.templates.query.resultHeader data="all"/}
-  </section>
-{/deltemplate}
+{template .main autoescape="contextual"}
+  {call gsgae.templates.base.main data="all"}
+    {param mainContent kind="html"}
+      <section id="resultset">
+        {call gsgae.templates.query.resultHeader data="all"/}
+      </section>
+    {/param}
+  {/call}
+{/template}

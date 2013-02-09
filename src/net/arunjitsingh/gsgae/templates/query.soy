@@ -1,11 +1,20 @@
 {namespace gsgae.templates.query}
 
 /**
- * Query results header.
+ * Query results.
  * @param query The query.
+ * @param results The result-set.
  */
-{template .resultHeader autoescape="contextual"}
+{template .resultHeader autoescape="strict"}
 <header>
   <h2>Results for <em>{$query}</em></h2>
 </header>
+<ul>
+  {foreach $result in $results}
+  <li>{$result}</li>
+  {ifempty}
+  <li><em>No results</em></li>
+  {/foreach}
+</ul>
+
 {/template}

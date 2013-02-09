@@ -36,11 +36,13 @@ public class QuerySoyInfo extends SoyFileInfo {
 
     /** Listed by .resultHeader. */
     public static final String QUERY = "query";
+    /** Listed by .resultHeader. */
+    public static final String RESULTS = "results";
   }
 
 
   /**
-   * Query results header.
+   * Query results.
    */
   public static class ResultHeaderSoyTemplateInfo extends SoyTemplateInfo {
 
@@ -51,12 +53,15 @@ public class QuerySoyInfo extends SoyFileInfo {
 
     /** The query. */
     public static final String QUERY = "query";
+    /** The result-set. */
+    public static final String RESULTS = "results";
 
     private ResultHeaderSoyTemplateInfo() {
       super(
           "gsgae.templates.query.resultHeader",
           ImmutableMap.<String, ParamRequisiteness>builder()
               .put("query", ParamRequisiteness.REQUIRED)
+              .put("results", ParamRequisiteness.REQUIRED)
               .build(),
           ImmutableSortedSet.<String>of(),
           false,
@@ -81,7 +86,8 @@ public class QuerySoyInfo extends SoyFileInfo {
         "query.soy",
         "gsgae.templates.query",
         ImmutableSortedSet.<String>of(
-            Param.QUERY),
+            Param.QUERY,
+            Param.RESULTS),
         ImmutableList.<SoyTemplateInfo>of(
             RESULT_HEADER),
         ImmutableMap.<String, CssTagsPrefixPresence>of());

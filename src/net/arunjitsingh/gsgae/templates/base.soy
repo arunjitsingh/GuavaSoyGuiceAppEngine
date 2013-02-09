@@ -2,23 +2,40 @@
 
 /**
  * The basic page layout.
+ * @param mainContent HTML content for #main.
  */
 {template .main autoescape="contextual"}
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{$ij.page.title}</title>
+    {call .head/}
   </head>
   <body>
-    <header><h1>{$ij.page.title}</h1></header>
+    <header>
+      {call .pageHeader/}
+    </header>
     <section id="main">
-      {delcall gsgae.templates.impl.content allowemptydefault="false" data="all"/}
+      {$mainContent |noAutoescape}
     </section>
+    <footer>
+      {call .pageFooter/}
+    </footer>
   </body>
 </html>
 {/template}
 
-/** Default implementation. */
-{deltemplate gsgae.templates.impl.content}
-  <section>Nothing to see here..</section>
-{/deltemplate}
+/** . */
+{template .head autoescape="contextual"}
+<title>{$ij.page.title}</title>
+<!-- TODO(arunjit): JS/CSS -->
+{/template}
+
+/** . */
+{template .pageHeader autoescape="contextual"}
+<h1>{$ij.page.title}</h1>
+{/template}
+
+/** . */
+{template .pageFooter autoescape="contextual"}
+<title>{$ij.page.title}</title>
+{/template}

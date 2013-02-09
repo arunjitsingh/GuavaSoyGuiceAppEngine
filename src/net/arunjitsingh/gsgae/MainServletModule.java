@@ -2,8 +2,8 @@ package net.arunjitsingh.gsgae;
 
 import com.google.inject.servlet.ServletModule;
 
-public class HomeServletModule extends ServletModule {
+public class MainServletModule extends ServletModule {
   @Override protected void configureServlets() {
-    serve("/*").with(HomeServlet.class);
+    serve("/").with(HomeServlet.class);
   }
 }
