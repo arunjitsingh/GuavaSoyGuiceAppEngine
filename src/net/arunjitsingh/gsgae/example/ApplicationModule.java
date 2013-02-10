@@ -9,7 +9,7 @@ import com.google.template.soy.xliffmsgplugin.XliffMsgPluginModule;
 
 public class ApplicationModule extends AbstractModule {
 
-  private class ServletsModule extends ServletModule {
+  private class ServingConfigurationModule extends ServletModule {
     @Override
     protected void configureServlets() {
       serve("/").with(HomeServlet.class);
@@ -20,7 +20,7 @@ public class ApplicationModule extends AbstractModule {
   protected void configure() {
     install(new SoyModule());
     install(new XliffMsgPluginModule());
-    install(new ServletsModule());
+    install(new ServingConfigurationModule());
   }
 
 }
