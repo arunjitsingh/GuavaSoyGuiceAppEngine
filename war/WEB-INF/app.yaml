@@ -7,7 +7,7 @@ system_properties:
   java.util.logging.config.file: WEB-INF/logging.properties
 
 listeners:
-- net.arunjitsingh.gsgae.GuiceContextBootstrap
+- net.arunjitsingh.gsgae.example.GuiceBootstrapListener
 
 handlers:
 - url: /_ah/spi/*

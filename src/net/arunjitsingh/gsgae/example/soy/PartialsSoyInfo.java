@@ -1,7 +1,7 @@
-// This file was automatically generated from query.soy.
+// This file was automatically generated from partials.soy.
 // Please don't edit this file by hand.
 
-package net.arunjitsingh.gsgae.soy;
+package net.arunjitsingh.gsgae.example.soy;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -11,20 +11,20 @@ import com.google.template.soy.parseinfo.SoyTemplateInfo;
 
 
 /**
- * Soy parse info for query.soy.
+ * Soy parse info for partials.soy.
  */
-public class QuerySoyInfo extends SoyFileInfo {
+public class PartialsSoyInfo extends SoyFileInfo {
 
 
   /** This Soy file's namespace. */
-  public static final String __NAMESPACE__ = "gsgae.templates.query";
+  public static final String __NAMESPACE__ = "gsgae.templates.partials";
 
 
   public static class TemplateName {
     private TemplateName() {}
 
-    /** The full template name of the .resultHeader template. */
-    public static final String RESULT_HEADER = "gsgae.templates.query.resultHeader";
+    /** The full template name of the .queryResults template. */
+    public static final String QUERY_RESULTS = "gsgae.templates.partials.queryResults";
   }
 
 
@@ -34,9 +34,9 @@ public class QuerySoyInfo extends SoyFileInfo {
   public static class Param {
     private Param() {}
 
-    /** Listed by .resultHeader. */
+    /** Listed by .queryResults. */
     public static final String QUERY = "query";
-    /** Listed by .resultHeader. */
+    /** Listed by .queryResults. */
     public static final String RESULTS = "results";
   }
 
@@ -44,21 +44,21 @@ public class QuerySoyInfo extends SoyFileInfo {
   /**
    * Query results.
    */
-  public static class ResultHeaderSoyTemplateInfo extends SoyTemplateInfo {
+  public static class QueryResultsSoyTemplateInfo extends SoyTemplateInfo {
 
     /** This template's full name. */
-    public static final String __NAME__ = "gsgae.templates.query.resultHeader";
+    public static final String __NAME__ = "gsgae.templates.partials.queryResults";
     /** This template's partial name. */
-    public static final String __PARTIAL_NAME__ = ".resultHeader";
+    public static final String __PARTIAL_NAME__ = ".queryResults";
 
     /** The query. */
     public static final String QUERY = "query";
     /** The result-set. */
     public static final String RESULTS = "results";
 
-    private ResultHeaderSoyTemplateInfo() {
+    private QueryResultsSoyTemplateInfo() {
       super(
-          "gsgae.templates.query.resultHeader",
+          "gsgae.templates.partials.queryResults",
           ImmutableMap.<String, ParamRequisiteness>builder()
               .put("query", ParamRequisiteness.REQUIRED)
               .put("results", ParamRequisiteness.REQUIRED)
@@ -68,36 +68,36 @@ public class QuerySoyInfo extends SoyFileInfo {
           false);
     }
 
-    private static final ResultHeaderSoyTemplateInfo __INSTANCE__ =
-        new ResultHeaderSoyTemplateInfo();
+    private static final QueryResultsSoyTemplateInfo __INSTANCE__ =
+        new QueryResultsSoyTemplateInfo();
 
-    public static ResultHeaderSoyTemplateInfo getInstance() {
+    public static QueryResultsSoyTemplateInfo getInstance() {
       return __INSTANCE__;
     }
   }
 
-  /** Same as ResultHeaderSoyTemplateInfo.getInstance(). */
-  public static final ResultHeaderSoyTemplateInfo RESULT_HEADER =
-      ResultHeaderSoyTemplateInfo.getInstance();
+  /** Same as QueryResultsSoyTemplateInfo.getInstance(). */
+  public static final QueryResultsSoyTemplateInfo QUERY_RESULTS =
+      QueryResultsSoyTemplateInfo.getInstance();
 
 
-  private QuerySoyInfo() {
+  private PartialsSoyInfo() {
     super(
-        "query.soy",
-        "gsgae.templates.query",
+        "partials.soy",
+        "gsgae.templates.partials",
         ImmutableSortedSet.<String>of(
             Param.QUERY,
             Param.RESULTS),
         ImmutableList.<SoyTemplateInfo>of(
-            RESULT_HEADER),
+            QUERY_RESULTS),
         ImmutableMap.<String, CssTagsPrefixPresence>of());
   }
 
 
-  private static final QuerySoyInfo __INSTANCE__ =
-      new QuerySoyInfo();
+  private static final PartialsSoyInfo __INSTANCE__ =
+      new PartialsSoyInfo();
 
-  public static QuerySoyInfo getInstance() {
+  public static PartialsSoyInfo getInstance() {
     return __INSTANCE__;
   }
 

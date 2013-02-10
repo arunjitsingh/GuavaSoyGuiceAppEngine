@@ -1,7 +1,7 @@
 // This file was automatically generated from base.soy.
 // Please don't edit this file by hand.
 
-package net.arunjitsingh.gsgae.soy;
+package net.arunjitsingh.gsgae.example.soy;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;

@@ -1,6 +1,8 @@
-package net.arunjitsingh.gsgae;
+package net.arunjitsingh.gsgae.example.servlets;
 
-import net.arunjitsingh.gsgae.soy.HomeSoyInfo;
+import net.arunjitsingh.gsgae.core.soy.SoyRenderer;
+import net.arunjitsingh.gsgae.example.soy.HomeSoyInfo;
+import net.arunjitsingh.gsgae.example.soy.ExampleSoyCache;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
@@ -32,7 +34,7 @@ public class HomeServlet extends HttpServlet {
     data.put("query", Strings.nullToEmpty(req.getParameter("q")));
     data.put("results", Lists.newArrayList());
 
-    SoyTofu tofu = SoyCache.getCache().getTofu();
+    SoyTofu tofu = ExampleSoyCache.getCache().getTofu();
     String content = SoyRenderer.render(tofu, HomeSoyInfo.MAIN, new SoyMapData(data), ij);
 
     resp.setContentType(MediaType.HTML_UTF_8.toString());

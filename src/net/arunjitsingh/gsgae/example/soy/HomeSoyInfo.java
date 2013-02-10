@@ -1,7 +1,7 @@
 // This file was automatically generated from home.soy.
 // Please don't edit this file by hand.
 
-package net.arunjitsingh.gsgae.soy;
+package net.arunjitsingh.gsgae.example.soy;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -48,9 +48,9 @@ public class HomeSoyInfo extends SoyFileInfo {
     public static final String __PARTIAL_NAME__ = ".main";
 
     // Indirect params.
-    /** Listed by gsgae.templates.query.resultHeader. */
+    /** Listed by gsgae.templates.partials.queryResults. */
     public static final String QUERY = "query";
-    /** Listed by gsgae.templates.query.resultHeader. */
+    /** Listed by gsgae.templates.partials.queryResults. */
     public static final String RESULTS = "results";
 
     private MainSoyTemplateInfo() {

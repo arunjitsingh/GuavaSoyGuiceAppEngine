@@ -1,4 +1,4 @@
-package net.arunjitsingh.gsgae;
+package net.arunjitsingh.gsgae.core.soy;
 
 import javax.annotation.Nullable;
 

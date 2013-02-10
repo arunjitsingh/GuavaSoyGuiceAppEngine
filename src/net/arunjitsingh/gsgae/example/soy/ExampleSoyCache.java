@@ -1,4 +1,4 @@
-package net.arunjitsingh.gsgae;
+package net.arunjitsingh.gsgae.example.soy;
 
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
@@ -14,20 +14,20 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
-public class SoyCache {
-  private static final String PREFIX = "/net/arunjitsingh/gsgae/templates/";
+public class ExampleSoyCache {
+  private static final String PREFIX = "/net/arunjitsingh/gsgae/example/templates/";
   private static final List<String> SOY_FILES = Lists.newArrayList(
       "base.soy",
       "home.soy",
-      "query.soy");
+      "partials.soy");
 
-  private static SoyCache cache = new SoyCache(PREFIX, SOY_FILES);
+  private static ExampleSoyCache cache = new ExampleSoyCache(PREFIX, SOY_FILES);
 
   private ImmutableList<String> soyFiles;
   private SoyTofu tofu;
   private String prefix;
 
-  protected SoyCache(@Nullable String prefix, List<String> files) {
+  protected ExampleSoyCache(@Nullable String prefix, List<String> files) {
     soyFiles = ImmutableList.copyOf(Preconditions.checkNotNull(files));
     this.prefix = Strings.nullToEmpty(prefix);
     createTofu();
@@ -50,7 +50,7 @@ public class SoyCache {
     return tofu;
   }
 
-  public static SoyCache getCache() {
+  public static ExampleSoyCache getCache() {
     return cache;
   }
 }
